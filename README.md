@@ -1,57 +1,101 @@
-def funcion_compleja(a, b, c):
-    if a > 0:
-        if b > 0:
-            if c > 0:
-                print("Todos son positivos")
+# Archivo: ejemplo_codacy.py
+# Código intencionalmente defectuoso para análisis en Codacy
+
+def validar_usuario(usuario, edad, activo):
+    # Complejidad alta (muchos if anidados)
+    if usuario is not None:
+        if usuario != "":
+            if edad > 0:
+                if edad < 120:
+                    if activo == True:
+                        print("Usuario válido y activo")
+                    else:
+                        print("Usuario válido pero inactivo")
+                else:
+                    print("Edad inválida")
             else:
-                print("c no es positivo")
+                print("Edad inválida")
         else:
-            print("b no es positivo")
+            print("Usuario vacío")
     else:
-        print("a no es positivo")
+        print("Usuario nulo")
 
 
-def funcion_compleja_duplicada(a, b, c):
-    if a > 0:
-        if b > 0:
-            if c > 0:
-                print("Todos son positivos")
+def validar_usuario_duplicado(usuario, edad, activo):
+    # Duplicación casi exacta del método anterior
+    if usuario is not None:
+        if usuario != "":
+            if edad > 0:
+                if edad < 120:
+                    if activo == True:
+                        print("Usuario válido y activo")
+                    else:
+                        print("Usuario válido pero inactivo")
+                else:
+                    print("Edad inválida")
             else:
-                print("c no es positivo")
+                print("Edad inválida")
         else:
-            print("b no es positivo")
+            print("Usuario vacío")
     else:
-        print("a no es positivo")
+        print("Usuario nulo")
+
+
+def calcular_descuento(tipo_cliente, total):
+    descuento = 0
+
+    # Complejidad ciclomática elevada
+    if tipo_cliente == "A":
+        descuento = total * 0.10
+    elif tipo_cliente == "B":
+        descuento = total * 0.15
+    elif tipo_cliente == "C":
+        descuento = total * 0.20
+    elif tipo_cliente == "D":
+        descuento = total * 0.25
+    elif tipo_cliente == "E":
+        descuento = total * 0.30
+    elif tipo_cliente == "F":
+        descuento = total * 0.35
+    else:
+        descuento = 0
+
+    return descuento
 
 
 def funcion_con_asuntos():
-    password = "123456" 
-
+    password = "admin123"   # Credencial hardcodeada (issue de seguridad)
     x = 10
     y = 0
-    resultado = 0  
+
+    resultado = 0  # Variable innecesaria
 
     if y != 0:
         resultado = x / y
     else:
-        print("División por cero evitada")
+        print("No se puede dividir para cero")
+
+    print("La contraseña es:", password)
 
 
-def funcion_no_usada():
-    print("Nunca se ejecuta")
+def funcion_sin_cobertura():
+    # Función que nunca se llama (afecta cobertura)
+    print("Esta función no tiene pruebas ni uso")
 
 
 def main():
-    funcion_compleja(1, 2, 3)
-    funcion_compleja_duplicada(1, 2, 3)
-
-    variable_sin_uso = 100 
-
-    if True == True:       
-        print("Condición innecesaria")
+    validar_usuario("Juan", 25, True)
+    validar_usuario_duplicado("Ana", 30, False)
+    print(calcular_descuento("C", 1000))
+    funcion_con_asuntos()
+    variable_no_usada = 999  # Issue: variable no utilizada
 
 
 main()
+
+
+
+
 
 
 
