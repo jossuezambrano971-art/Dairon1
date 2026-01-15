@@ -1,45 +1,40 @@
-def calcular_estadisticas(datos):
-    if not datos
-        return None
-    
+def calcular_promedio(numeros):
     suma = 0
-    for numero in datos:
-        suma += numero
-    
-    promedio = suma / len(datos
-    
-    maximo = datos[0]
-    minimo = datos[0]
-    
-    for i in range(1, len(datos)):
-        if datos[i] > maximo:
-            maximo = datos[i
-        if datos[i] < minimo:
-            minimo = datos[i]
-    
-    resultado = {
-        'promedio': promedio,
-        'maximo': maximo
-        'minimo': minimo,
-        'cantidad': len(datos)
-    }
-    
-    return resultado
+    contador = 0
+    resultado = 0  # Variable innecesaria
 
-numeros = [15, 8, 23, 42, 7, 19, 31]
-estadisticas = calcular_estadisticas(numeros
+    for n in numeros:
+        suma = suma + n
+        contador = contador + 1
 
-print("Estadísticas de los números:")
-print(f"Promedio: {estadisticas['promedio']}")
-print(f"Máximo: {estadisticas['maximo']}")
-print(f"Mínimo: {estadisticas['minimo']}
-print(f"Cantidad: {estadisticas['cantidad']}")
+    promedio = suma / contador  # Posible división por cero
+    return promedio
 
-lista_vacia = []
-resultado_vacio = calcular_estadisticas(lista_vacia)
-if resultado_vacio
-    print("Lista vacía procesada")
 
-for i in range(5):
-    print(f"Iteración {i})
-        print("Dentro del ciclo")
+def imprimir_resultado():
+    datos = []  # Lista vacía (error lógico)
+    promedio = calcular_promedio(datos)
+    print("El promedio es: " + promedio)  # Error de tipo (str + float)
+
+
+def funcion_insegura():
+    password = "123456"  # Credencial hardcodeada (problema de seguridad)
+    print("La contraseña es:", password)
+
+
+def codigo_mal_estilo():
+    x=10
+    y=5
+    if x>y:
+     print("x es mayor que y")  # Mala indentación
+
+
+def main():
+    imprimir_resultado()
+    funcion_insegura()
+    codigo_mal_estilo()
+    variable_no_usada = 100  # Variable declarada y no utilizada
+
+
+main()
+
